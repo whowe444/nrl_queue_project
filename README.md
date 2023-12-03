@@ -61,7 +61,7 @@ Benefits of this API include
 ## Strengths and Weakness of my Implementation
 Strengths:
 * using linked list based implementation so can handle a dynamic number of elements and avoids array resizing
-* sentinel node makes enqueue implementation simpler
+* sentinel node plus first in line pointer makes enqueue implementation simple to write
 * good modularity and unit testing
 * error handling for malloc
 * shared object library enables easier patching since I may not need to recompile my binaries if I change my .so

@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_NUM 1000
-#define NUM_CHARS 4
+#define MAX_NUM 10000
+#define NUM_CHARS MAX_NUM/10 + 1
 
 char g_str[NUM_CHARS+1];
 

@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void
 test_generate_empty_node()
@@ -16,6 +17,8 @@ test_generate_empty_node()
 
     assert(t_node->data == NULL);
     assert(t_node->next == NULL);
+
+    free(t_node);
 
     printf("TEST test_generate_empty_node(): SUCCESS\n");
 }
@@ -29,6 +32,8 @@ test_generate_empty_str_node()
     assert(strcmp(t_empty_str, t_node->data) == 0);
     assert(t_node->next == NULL);
 
+    free(t_node);
+
     printf("TEST test_generate_empty_str_node(): SUCCESS\n");
 }
 
@@ -40,6 +45,9 @@ test_generate_node_with_str()
 
     assert(strcmp(t_str, t_node->data) == 0);
     assert(t_node->next == NULL);
+
+    free(t_node);
+
     printf("TEST test_generate_node_with_str(): SUCCESS\n");
 }
 
@@ -53,6 +61,8 @@ test_generate_node_then_modify()
 
     assert(strcmp(t_str, t_node->data) != 0);
     assert(t_node->next == NULL);
+
+    free(t_node);
 
     printf("TEST test_generate_node_then_modify(): SUCCESS\n");
 }
@@ -71,6 +81,9 @@ test_generate_node_with_next()
     assert(t_node1->next == t_node2);
     assert(t_node2->next == NULL);
 
+    free(t_node1);
+    free(t_node2);
+
     printf("TEST test_generate_node_with_next(): SUCCESS\n");
 }
 
@@ -85,6 +98,9 @@ test_generate_node_with_next_arg()
 
     assert(t_node1->next == NULL);
     assert(t_node2->next == t_node1);
+
+    free(t_node1);
+    free(t_node2);
 
     printf("TEST test_generate_node_with_next_arg(): SUCCESS\n");
 }

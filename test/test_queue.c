@@ -4,6 +4,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <string.h>
 
 void
 test_empty_size()
@@ -31,4 +32,16 @@ test_single_enqueue_size()
     assert(size() == 1);
 
     printf("TEST test_single_enqueue_size(): SUCCESS\n");
+}
+
+void
+test_single_dequeue()
+{
+    const char* t_str = "cat";
+
+    assert(strcmp(dequeue(), t_str) == 0);
+
+    assert(size() == 0);
+
+    printf("TEST test_single_dequeue(): SUCCESS\n");
 }

@@ -12,4 +12,7 @@ main()
     // TEST single enqueue
     test_single_enqueue_size();
 
+    // TEST single dequeue
+    test_single_dequeue();
+
 }

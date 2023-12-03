@@ -39,3 +39,17 @@ test_generate_node_with_str()
     assert(t_node->next == NULL);
     printf("TEST test_generate_node_with_str(): SUCCESS\n");
 }
+
+void
+test_generate_node_then_modify()
+{
+    const char* t_str = "cat";
+    node* t_node = generate_node(t_str);
+
+    t_node->data = "dog";
+
+    assert(strcmp(t_str, t_node->data) != 0);
+    assert(t_node->next == NULL);
+
+    printf("TEST test_generate_node_then_modify(): SUCCESS\n");
+}

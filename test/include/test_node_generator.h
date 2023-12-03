@@ -12,4 +12,7 @@ test_generate_empty_str_node();
 void
 test_generate_node_with_str();
 
+void
+test_generate_node_then_modify();
+
 #endif /* TEST_NODE_GENERATOR_MAIN_H */

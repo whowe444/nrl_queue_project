@@ -11,4 +11,7 @@ main()
 
     // TEST non-empty str as data
     test_generate_node_with_str();
+
+    // TEST generate node then modify
+    test_generate_node_then_modify();
 }

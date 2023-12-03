@@ -80,6 +80,26 @@ test_random_enqueue_dequeue()
 }
 
 void
+test_random_double_enqueue_double_dequeue()
+{
+    const char* t_str1 = generate_random_str();
+    assert(enqueue(t_str1) == 0);
+    assert(size() == 1);
+
+    const char* t_str2 = generate_random_str();
+    assert(enqueue(t_str2) == 0);
+    assert(size() == 2);
+
+    assert(strcmp(dequeue(), t_str1) == 0);
+    assert(size() == 1);
+
+    assert(strcmp(dequeue(), t_str2) == 0);
+    assert(size() == 0);
+
+    printf("TEST test_random_double_enqueue_double_dequeue(): SUCCESS\n");
+}
+
+void
 test_enqueue_many_elements()
 {
 

@@ -26,6 +26,9 @@ main()
     // TEST random enqueue / dequeue
     test_random_enqueue_dequeue();
 
+    // TEST random double enqueue / dequeue
+    test_random_double_enqueue_double_dequeue();
+
     // TEST enqueue many elements
     test_enqueue_many_elements();
 }

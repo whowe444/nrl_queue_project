@@ -13,4 +13,13 @@ test_single_enqueue_size();
 void
 test_single_dequeue();
 
+void
+test_double_enqueue_double_dequeue();
+
+void
+test_random_enqueue_dequeue();
+
+void
+test_enqueue_many_elements();
+
 #endif /* TEST_QUEUE_H */

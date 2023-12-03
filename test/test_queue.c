@@ -1,6 +1,7 @@
 #include "test_queue.h"
 
 #include "queue.h"
+#include "random_str_gen.h"
 
 #include <assert.h>
 #include <stdio.h>
@@ -44,4 +45,42 @@ test_single_dequeue()
     assert(size() == 0);
 
     printf("TEST test_single_dequeue(): SUCCESS\n");
+}
+
+void
+test_double_enqueue_double_dequeue()
+{
+    assert(enqueue("cat") == 0);
+    assert(enqueue("dog") == 0);
+    assert(size() == 2);
+
+    assert(strcmp(dequeue(), "cat") == 0);
+    assert(size() == 1);
+
+    assert(strcmp(dequeue(), "dog") == 0);
+    assert(size() == 0);
+
+    assert(dequeue() == NULL);
+
+    printf("TEST test_double_enqueue_double_dequeue(): SUCCESS\n");
+}
+
+void
+test_random_enqueue_dequeue()
+{
+    const char* t_str = generate_random_str();
+
+    assert(enqueue(t_str) == 0);
+    assert(size() == 1);
+
+    assert(strcmp(dequeue(), t_str) == 0);
+    assert(size() == 0);
+
+    printf("TEST test_random_enqueue_dequeue(): SUCCESS\n");
+}
+
+void
+test_enqueue_many_elements()
+{
+
 }

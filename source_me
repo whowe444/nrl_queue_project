@@ -1,4 +1,5 @@
 #! /bin/sh
+
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo "The top level directory of the project is: " $SCRIPT_DIR
 
@@ -9,7 +10,7 @@ export TOP_LEVEL_DIR=${SCRIPT_DIR}
 mkdir -p ${TOP_LEVEL_DIR}/lib64
 mkdir -p ${TOP_LEVEL_DIR}/bin
 
-# set library path
+# set library path, so we can run our test binaries
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TOP_LEVEL_DIR}/lib64
 
 # obj dirs

@@ -15,7 +15,7 @@ LIBS = -lnrlqueue
 .PHONY: all
 all: $(TARGET_BIN1) $(TARGET_BIN2)
 
-_DEPS = test_node_generator.h test_queue.h
+_DEPS = test_node_generator.h test_queue.h random_str_gen.h
 DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
 _OBJ1 = test_node_generator.o test_node_generator_main.o
@@ -27,7 +27,7 @@ $(OBJ1): $(OBJ_DIR)/%.o: %.c $(DEPS)
 $(TARGET_BIN1): $(OBJ1)
 	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
 
-_OBJ2 = test_queue.o test_queue_main.o
+_OBJ2 = test_queue.o test_queue_main.o random_str_gen.o
 OBJ2 = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ2))
 
 $(OBJ2): $(OBJ_DIR)/%.o: %.c $(DEPS)

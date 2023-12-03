@@ -7,7 +7,7 @@
 static int g_size = 0;
 
 static node g_sentinel;
-static node* g_first = &g_sentinel;
+static node* g_first_in_line = &g_sentinel;
 
 int
 enqueue(const char* a_data)
@@ -18,8 +18,8 @@ enqueue(const char* a_data)
         return -1;
     }
 
-    g_first->next = t_new_node;
-    g_first = t_new_node;
+    g_first_in_line->next = t_new_node;
+    g_first_in_line = t_new_node;
 
     g_size++;
 
@@ -39,9 +39,9 @@ dequeue()
     node* t_return_node = g_sentinel.next;
 
     // handle the special case of size == 1
-    if (t_return_node == g_first)
+    if (t_return_node == g_first_in_line)
     {
-        g_first = &g_sentinel;
+        g_first_in_line = &g_sentinel;
     }
 
     g_sentinel.next = t_return_node->next;

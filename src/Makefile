@@ -1,23 +1,23 @@
+INCLUDE_DIR=include
 CC = gcc
-CFLAGS = -fPIC -Wall -Wextra -O2 -g -std=c99
-LDFLAGS = -shared
-RM = rm -f
-TARGET_LIB = ../lib64/libnrlqueue.so
+CFLAGS = -I$(INCLUDE_DIR) -fPIC -Wall -Wextra -O2 -g -std=c99
 
-SRCS = node_generator.c
-OBJS = $(SRCS:.c=.o)
+OBJ_DIR = ./obj
+LIB_DIR = ../lib64
+TARGET_LIB = ${LIB_DIR}/libnrlqueue.so
 
-.PHONY: all
-all: ${TARGET_LIB}
+_DEPS = node.h node_generator.h
+DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
-$(TARGET_LIB): $(OBJS)
-	$(CC) ${LDFLAGS} -o $@ $^
+_OBJ = node_generator.o
+OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
 
-$(SRCS:.c=.d):%.d:%.c
-	$(CC) ${CFLAGS} -MM $< >$@
+$(OBJ): $(OBJ_DIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-include $(SRCS:.c=.d)
+$(TARGET_LIB): $(OBJ)
+	$(CC) -o $@ $^ $(CFLAGS)
 
 .PHONY: clean
 clean:
-	-${RM} ${TARGET_LIB} ${OBJS} $(SRCS:.c=.d)
+	rm -f  $(OBJ_DIR)/*.o *~ core $(INCLUDE_DIR)/*~

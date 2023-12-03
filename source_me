@@ -1,3 +1,5 @@
 #! /bin/sh
 
 mkdir -p lib64
+mkdir -p src/obj
+mkdir -p src/include

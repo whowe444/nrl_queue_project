@@ -52,3 +52,20 @@ The API for this queue consists of:
 * `int enqueue(const char* a_data); // Adds a new string to the queue.`
 * `const char* dequeue(); // Remove the first in line at the queue.`
 * `int size(); // Returns the current number of elements in the queue.`
+
+Benefits of this API include
+* const data so that the caller should not expect their data to be modified
+* queue handles memory management
+* caller must handle memory management for their data
+
+## Strengths and Weakness of my Implementation
+Strengths:
+* using linked list based implementation so can handle a dynamic number of elements and avoids array resizing
+* sentinel node makes enqueue implementation simpler
+* good modularity and unit testing
+* error handling for malloc
+* shared object library enables easier patching since I may not need to recompile my binaries if I change my .so
+
+Weaknesses:
+* since using linked lists based implementation, must handle memory management and pointer manipulation and loses out on direct access of an array based implementation
+* int is implementation dependent (C standard only guarantees a minimum length of 16bits) limiting queue length

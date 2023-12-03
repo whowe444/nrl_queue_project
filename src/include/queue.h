@@ -4,6 +4,9 @@
 int
 enqueue(const char* a_data);
 
+const char*
+dequeue();
+
 int
 size();
 

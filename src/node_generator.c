@@ -4,7 +4,7 @@
 #include "node_generator.h"
 
 node*
-generate_node(const char *a_data, const node* a_next)
+generate_node(const char *a_data, node* a_next)
 {
     node* t_return = NULL;
     t_return = malloc(sizeof(node));

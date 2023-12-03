@@ -14,9 +14,21 @@ test_empty_size()
 }
 
 void
+test_empty_dequeue()
+{
+    assert(dequeue() == NULL);
+
+    assert(size() == 0);
+
+    printf("TEST test_empty_dequeue(): SUCCESS\n");
+}
+
+void
 test_single_enqueue_size()
 {
-    enqueue("cat");
+    assert(enqueue("cat") == 0);
 
     assert(size() == 1);
+
+    printf("TEST test_single_enqueue_size(): SUCCESS\n");
 }

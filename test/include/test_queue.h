@@ -5,7 +5,9 @@ void
 test_empty_size();
 
 void
-test_single_enqueue_size();
+test_empty_dequeue();
 
+void
+test_single_enqueue_size();
 
 #endif /* TEST_QUEUE_H */

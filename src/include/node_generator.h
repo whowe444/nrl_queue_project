@@ -4,6 +4,6 @@
 #include "node.h"
 
 node*
-generate_node(const char *a_data, const node* a_next);
+generate_node(const char *a_data, node* a_next);
 
 #endif /* NODE_GENERATOR_H */

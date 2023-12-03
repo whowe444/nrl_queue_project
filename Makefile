@@ -1,3 +1,5 @@
+# src: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
+
 SUBDIRS = src test
 
 all: $(SUBDIRS)

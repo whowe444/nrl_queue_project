@@ -1,8 +1,0 @@
-1. Return a const node* from node_generator.h? Not sure if there is any benefit...
-2. What data type to pass into node generator? Should it be a const char[] &a_data
-3. What is the naming convention for function parameters?
-4. Why am I using shared object libraries?
-5. Why am I using the Makefile that I am using: https://www.topbug.net/blog/2019/10/28/makefile-template-for-a-shared-library-in-c-with-explanations/
-6. I am modeling my makefiles off of this tutorial: https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
-
-7. Order of imports in C?

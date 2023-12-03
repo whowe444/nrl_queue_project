@@ -1,5 +1,4 @@
 #include "queue.h"
-
 #include "node_generator.h"
 
 #include <stdlib.h>

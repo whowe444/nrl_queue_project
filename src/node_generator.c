@@ -1,7 +1,7 @@
+#include "node_generator.h"
+
 #include <stdio.h>
 #include <stdlib.h>
-
-#include "node_generator.h"
 
 node*
 generate_node(const char *a_data, node* a_next)

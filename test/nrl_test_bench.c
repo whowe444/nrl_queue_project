@@ -67,4 +67,10 @@ run_nrl_test_bench()
 
     // 10. Print number of elements in the queue
     printf("Size: %d\n", size());
+
+    // 11. Continue removing and printing elements from the queue until none remain
+    while (size() > 0)
+    {
+        printf("Removed element: %s\n", dequeue());
+    }
 }

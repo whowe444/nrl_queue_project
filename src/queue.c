@@ -4,7 +4,6 @@
 #include <stdlib.h>
 
 static int g_size = 0;
-
 static node g_sentinel;
 static node* gp_first_in_line = &g_sentinel;
 

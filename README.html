@@ -391,13 +391,13 @@ source source_me
 make
 </div></code></pre>
 <h2 id="instructions-for-running-the-test-benches">Instructions for running the test benches</h2>
-<pre class="hljs"><code><div>/* Run tests */
+<pre class="hljs"><code><div># Run tests
 ./run_tests.sh
 
-/* Run tests with valgrind */
+# Run tests with valgrind
 ./run_test_with_valgrind.sh
 
-/* Run cppcheck */
+# Run cppcheck
 cppcheck .
 </div></code></pre>
 <h2 id="instructions-for-adding-new-test-cases">Instructions for adding new test cases</h2>
@@ -427,7 +427,7 @@ cppcheck .
 <li>queue handles memory management</li>
 <li>caller must handle memory management for their data</li>
 </ul>
-<h2 id="strengths-and-weakness-of-my-implementation">Strengths and Weakness of my Implementation</h2>
+<h2 id="strengths-and-weaknesses-of-my-implementation">Strengths and Weaknesses of my Implementation</h2>
 <p>Strengths:</p>
 <ul>
 <li>using linked list based implementation so can handle a dynamic number of elements and avoids array resizing</li>
@@ -435,12 +435,15 @@ cppcheck .
 <li>good modularity and unit testing</li>
 <li>error handling for malloc</li>
 <li>shared object library enables easier patching since I may not need to recompile my binaries if I change my .so</li>
+<li>implementation details of node.h not exposed in any h files</li>
 </ul>
 <p>Weaknesses:</p>
 <ul>
 <li>since using linked lists based implementation, must handle memory management and pointer manipulation and loses out on direct access of an array based implementation</li>
 <li>int is implementation dependent (C standard only guarantees a minimum length of 16bits) limiting queue length</li>
 <li>pointers are frequently prone to error, hence I should be using a smart pointer implementation to reduce risk and automate memory management</li>
+<li>node_generator.h is exposed to the client. this was mostly since I wanted to unit test it in its own module and I use it in both the queue and
+the test code</li>
 </ul>
 
 </body>

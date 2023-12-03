@@ -58,7 +58,7 @@ Benefits of this API include
 * queue handles memory management
 * caller must handle memory management for their data
 
-## Strengths and Weakness of my Implementation
+## Strengths and Weaknesses of my Implementation
 Strengths:
 * using linked list based implementation so can handle a dynamic number of elements and avoids array resizing
 * sentinel node plus end of line pointer makes enqueue implementation simple to write

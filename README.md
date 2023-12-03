@@ -65,6 +65,7 @@ Strengths:
 * good modularity and unit testing
 * error handling for malloc
 * shared object library enables easier patching since I may not need to recompile my binaries if I change my .so
+* implementation details of node.h not exposed in any h files
 
 Weaknesses:
 * since using linked lists based implementation, must handle memory management and pointer manipulation and loses out on direct access of an array based implementation

@@ -31,4 +31,7 @@ main()
 
     // TEST enqueue many elements
     test_enqueue_many_elements();
+
+    // TEST enqueue / dequeue many elements
+    test_enqueue_dequeue_many_elements();
 }

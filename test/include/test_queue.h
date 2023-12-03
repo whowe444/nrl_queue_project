@@ -25,4 +25,7 @@ test_random_double_enqueue_double_dequeue();
 void
 test_enqueue_many_elements();
 
+void
+test_enqueue_dequeue_many_elements();
+
 #endif /* TEST_QUEUE_H */

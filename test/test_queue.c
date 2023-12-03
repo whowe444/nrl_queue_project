@@ -108,5 +108,51 @@ test_random_double_enqueue_double_dequeue()
 void
 test_enqueue_many_elements()
 {
+    const int t_num_elements = 1000000;
+    char* t_elements[t_num_elements];
 
+    for (int i = 0; i < t_num_elements; i++)
+    {
+        t_elements[i] = generate_random_str();
+        assert(size() == i);
+        assert(enqueue(t_elements[i]) == 0);
+    }
+    assert(size() == t_num_elements);
+
+    //cleanup
+    for (int i = 0; i < t_num_elements; i++)
+    {
+        dequeue();
+        free(t_elements[t_num_elements -1 - i]);
+    }
+
+    assert(size() == 0);
+
+    printf("TEST test_enqueue_many_elements(): SUCCESS\n");
+}
+
+void
+test_enqueue_dequeue_many_elements()
+{
+    const int t_num_elements = 1000000;
+    char* t_elements[t_num_elements];
+
+    for (int i = 0; i < t_num_elements; i++)
+    {
+        t_elements[i] = generate_random_str();
+        assert(size() == i);
+        assert(enqueue(t_elements[i]) == 0);
+    }
+
+    assert(size() == t_num_elements);
+
+    for (int i = 0; i < t_num_elements; i++)
+    {
+        assert(strcmp(dequeue(), t_elements[i]) == 0);
+        free(t_elements[i]);
+    }
+
+    assert(size() == 0);
+
+    printf("TEST test_enqueue_dequeue_many_elements(): SUCCESS\n");
 }

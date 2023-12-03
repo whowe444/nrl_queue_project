@@ -1,5 +1,7 @@
 #include "test_node_generator.h"
 
+#include "node_generator.h"
+
 #include "assert.h"
 #include <stdbool.h>
 #include <stdio.h>

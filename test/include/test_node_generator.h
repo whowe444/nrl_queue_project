@@ -1,8 +1,6 @@
 #ifndef TEST_NODE_GENERATOR_H
 #define TEST_NODE_GENERATOR_H
 
-#include "node_generator.h"
-
 void
 test_generate_empty_node();
 

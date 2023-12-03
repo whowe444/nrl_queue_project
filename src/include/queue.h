@@ -1,7 +1,8 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-#include "node_generator.h"
+int
+enqueue(const char* a_data);
 
 int
 size();

@@ -1,5 +1,5 @@
-#ifndef TEST_NODE_GENERATOR_MAIN_H
-#define TEST_NODE_GENERATOR_MAIN_H
+#ifndef TEST_NODE_GENERATOR_H
+#define TEST_NODE_GENERATOR_H
 
 #include "node_generator.h"
 
@@ -21,4 +21,4 @@ test_generate_node_with_next();
 void
 test_generate_node_with_next_arg();
 
-#endif /* TEST_NODE_GENERATOR_MAIN_H */
+#endif /* TEST_NODE_GENERATOR_H */

@@ -7,23 +7,33 @@ LIBRARY_PATH = ${TOP_LEVEL_DIR}/lib64/
 OBJ_DIR = ./obj
 LIB_DIR = ../lib64
 BIN_DIR  = ../bin
-TARGET_BIN = ${BIN_DIR}/test_node_generator_main
+TARGET_BIN1 = ${BIN_DIR}/test_node_generator_main
+TARGET_BIN2 = ${BIN_DIR}/test_queue_main
 
 LIBS = -lnrlqueue
 
 .PHONY: all
-all: $(TARGET_BIN)
+all: $(TARGET_BIN1) $(TARGET_BIN2)
 
-_DEPS = test_node_generator.h
+_DEPS = test_node_generator.h test_queue.h
 DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
-_OBJ = test_node_generator.o test_node_generator_main.o
-OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
+_OBJ1 = test_node_generator.o test_node_generator_main.o
+OBJ1 = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ1))
 
-$(OBJ): $(OBJ_DIR)/%.o: %.c $(DEPS)
+$(OBJ1): $(OBJ_DIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(TARGET_BIN): $(OBJ)
+$(TARGET_BIN1): $(OBJ1)
+	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
+
+_OBJ2 = test_queue.o test_queue_main.o
+OBJ2 = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ2))
+
+$(OBJ2): $(OBJ_DIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+$(TARGET_BIN2): $(OBJ2)
 	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
 
 .PHONY: clean

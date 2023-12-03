@@ -4,7 +4,7 @@
 typedef struct node_struct
 {
     const char *data;
-    struct node_struct* next;
+    const struct node_struct* next;
 } node;
 
 #endif /* NODE_H */

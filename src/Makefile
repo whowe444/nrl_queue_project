@@ -10,10 +10,10 @@ TARGET_LIB = ${LIB_DIR}/libnrlqueue.so
 .PHONY: all
 all: $(TARGET_LIB)
 
-_DEPS = node.h node_generator.h
+_DEPS = node.h node_generator.h queue.h
 DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
-_OBJ = node_generator.o
+_OBJ = node_generator.o queue.o
 OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
 
 $(OBJ): $(OBJ_DIR)/%.o: %.c $(DEPS)

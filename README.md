@@ -11,6 +11,22 @@ This project follows the Embedded C Coding Standard found [here](https://barrgro
 
 
 ## Instructions for building the source code
+```
+git clone https://github.com/whowe444/nrl_queue_project.git
+cd nrl_queue_project
+source source_me
+make
+```
 
 ## Instructions for running the test benches
+```
+/* Run tests */
+./run_tests.sh
+
+/* Run tests with valgrind */
+./run_test_with_valgrind.sh
+
+/* Run cppcheck */
+cppcheck .
+```
 

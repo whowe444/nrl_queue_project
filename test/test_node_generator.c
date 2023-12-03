@@ -11,14 +11,14 @@
 void
 test_generate_empty_node()
 {
-    const char* t_null_str = NULL;
-    node* t_next = NULL;
-    node* t_node = generate_node(t_null_str, t_next);
+    const char* p_null_str = NULL;
+    node* p_next = NULL;
+    node* p_node = generate_node(p_null_str, p_next);
 
-    assert(t_node->data == NULL);
-    assert(t_node->next == NULL);
+    assert(p_node->p_data == NULL);
+    assert(p_node->p_next == NULL);
 
-    free(t_node);
+    free(p_node);
 
     printf("TEST test_generate_empty_node(): SUCCESS\n");
 }
@@ -26,13 +26,13 @@ test_generate_empty_node()
 void
 test_generate_empty_str_node()
 {
-    const char* t_empty_str = "";
-    node* t_node = generate_node(t_empty_str, NULL);
+    const char* p_empty_str = "";
+    node* p_node = generate_node(p_empty_str, NULL);
 
-    assert(strcmp(t_empty_str, t_node->data) == 0);
-    assert(t_node->next == NULL);
+    assert(strcmp(p_empty_str, p_node->p_data) == 0);
+    assert(p_node->p_next == NULL);
 
-    free(t_node);
+    free(p_node);
 
     printf("TEST test_generate_empty_str_node(): SUCCESS\n");
 }
@@ -40,13 +40,13 @@ test_generate_empty_str_node()
 void
 test_generate_node_with_str()
 {
-    const char* t_str = "cat";
-    node* t_node = generate_node(t_str, NULL);
+    const char* p_str = "cat";
+    node* p_node = generate_node(p_str, NULL);
 
-    assert(strcmp(t_str, t_node->data) == 0);
-    assert(t_node->next == NULL);
+    assert(strcmp(p_str, p_node->p_data) == 0);
+    assert(p_node->p_next == NULL);
 
-    free(t_node);
+    free(p_node);
 
     printf("TEST test_generate_node_with_str(): SUCCESS\n");
 }
@@ -54,15 +54,15 @@ test_generate_node_with_str()
 void
 test_generate_node_then_modify()
 {
-    const char* t_str = "cat";
-    node* t_node = generate_node(t_str, NULL);
+    const char* p_str = "cat";
+    node* p_node = generate_node(p_str, NULL);
 
-    t_node->data = "dog";
+    p_node->p_data = "dog";
 
-    assert(strcmp(t_str, t_node->data) != 0);
-    assert(t_node->next == NULL);
+    assert(strcmp(p_str, p_node->p_data) != 0);
+    assert(p_node->p_next == NULL);
 
-    free(t_node);
+    free(p_node);
 
     printf("TEST test_generate_node_then_modify(): SUCCESS\n");
 }
@@ -70,19 +70,19 @@ test_generate_node_then_modify()
 void
 test_generate_node_with_next()
 {
-    const char* t_str1 = "cat";
-    node* t_node1 = generate_node(t_str1, NULL);
+    const char* p_str1 = "cat";
+    node* p_node1 = generate_node(p_str1, NULL);
 
-    const char* t_str2 = "dog";
-    node* t_node2 = generate_node(t_str2, NULL);
+    const char* p_str2 = "dog";
+    node* p_node2 = generate_node(p_str2, NULL);
 
-    t_node1->next = t_node2;
+    p_node1->p_next = p_node2;
 
-    assert(t_node1->next == t_node2);
-    assert(t_node2->next == NULL);
+    assert(p_node1->p_next == p_node2);
+    assert(p_node2->p_next == NULL);
 
-    free(t_node1);
-    free(t_node2);
+    free(p_node1);
+    free(p_node2);
 
     printf("TEST test_generate_node_with_next(): SUCCESS\n");
 }
@@ -90,17 +90,17 @@ test_generate_node_with_next()
 void
 test_generate_node_with_next_arg()
 {
-    const char* t_str1 = "cat";
-    node* t_node1 = generate_node(t_str1, NULL);
+    const char* p_str1 = "cat";
+    node* p_node1 = generate_node(p_str1, NULL);
 
-    const char* t_str2 = "dog";
-    node* t_node2 = generate_node(t_str2, t_node1);
+    const char* p_str2 = "dog";
+    node* p_node2 = generate_node(p_str2, p_node1);
 
-    assert(t_node1->next == NULL);
-    assert(t_node2->next == t_node1);
+    assert(p_node1->p_next == NULL);
+    assert(p_node2->p_next == p_node1);
 
-    free(t_node1);
-    free(t_node2);
+    free(p_node1);
+    free(p_node2);
 
     printf("TEST test_generate_node_with_next_arg(): SUCCESS\n");
 }

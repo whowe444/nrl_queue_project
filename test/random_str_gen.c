@@ -20,7 +20,7 @@ char*
 generate_random_str()
 {
     int t_rand = rand() % MAX_NUM;
-    char * t_str = malloc(sizeof(g_str));
-    sprintf(t_str, "%d", t_rand);
-    return t_str;
+    char * p_str = malloc(sizeof(g_str));
+    sprintf(p_str, "%d", t_rand);
+    return p_str;
 }

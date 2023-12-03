@@ -8,14 +8,14 @@ static node g_sentinel;
 static node* gp_end_of_line = &g_sentinel;
 
 int
-enqueue(const char* a_data)
+enqueue(const char* p_data)
 {
     int t_return_val = -1;
-    node* t_new_node = generate_node(a_data, NULL);
-    if (t_new_node)
+    node* p_new_node = generate_node(p_data, NULL);
+    if (p_new_node)
     {
-        gp_end_of_line->next = t_new_node;
-        gp_end_of_line = t_new_node;
+        gp_end_of_line->p_next = p_new_node;
+        gp_end_of_line = p_new_node;
         g_size++;
         t_return_val = 0;
     }
@@ -25,23 +25,23 @@ enqueue(const char* a_data)
 const char*
 dequeue()
 {
-    const char* t_return_str = NULL;
-    node* t_return_node = g_sentinel.next;
-    if (t_return_node)
+    const char* p_return_str = NULL;
+    node* p_return_node = g_sentinel.p_next;
+    if (p_return_node)
     {
         // handle the special case of size == 1
-        if (t_return_node == gp_end_of_line)
+        if (p_return_node == gp_end_of_line)
         {
             gp_end_of_line = &g_sentinel;
         }
 
-        g_sentinel.next = t_return_node->next;
-        t_return_str = t_return_node->data;
-        free(t_return_node);
+        g_sentinel.p_next = p_return_node->p_next;
+        p_return_str = p_return_node->p_data;
+        free(p_return_node);
 
         g_size--;
     }
-    return t_return_str;
+    return p_return_str;
 }
 
 int

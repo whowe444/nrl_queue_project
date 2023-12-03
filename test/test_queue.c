@@ -8,6 +8,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define NUM_ELEMENTS 1000000
+
 void
 test_empty_size()
 {
@@ -39,9 +41,9 @@ test_single_enqueue_size()
 void
 test_single_dequeue()
 {
-    const char* t_str = "cat";
+    const char* p_str = "cat";
 
-    assert(strcmp(dequeue(), t_str) == 0);
+    assert(strcmp(dequeue(), p_str) == 0);
 
     assert(size() == 0);
 
@@ -69,15 +71,15 @@ test_double_enqueue_double_dequeue()
 void
 test_random_enqueue_dequeue()
 {
-    char* t_str = generate_random_str();
+    char* p_str = generate_random_str();
 
-    assert(enqueue(t_str) == 0);
+    assert(enqueue(p_str) == 0);
     assert(size() == 1);
 
-    assert(strcmp(dequeue(), t_str) == 0);
+    assert(strcmp(dequeue(), p_str) == 0);
     assert(size() == 0);
 
-    free(t_str);
+    free(p_str);
 
     printf("TEST test_random_enqueue_dequeue(): SUCCESS\n");
 }
@@ -85,22 +87,22 @@ test_random_enqueue_dequeue()
 void
 test_random_double_enqueue_double_dequeue()
 {
-    char* t_str1 = generate_random_str();
-    assert(enqueue(t_str1) == 0);
+    char* p_str1 = generate_random_str();
+    assert(enqueue(p_str1) == 0);
     assert(size() == 1);
 
-    char* t_str2 = generate_random_str();
-    assert(enqueue(t_str2) == 0);
+    char* p_str2 = generate_random_str();
+    assert(enqueue(p_str2) == 0);
     assert(size() == 2);
 
-    assert(strcmp(dequeue(), t_str1) == 0);
+    assert(strcmp(dequeue(), p_str1) == 0);
     assert(size() == 1);
 
-    assert(strcmp(dequeue(), t_str2) == 0);
+    assert(strcmp(dequeue(), p_str2) == 0);
     assert(size() == 0);
 
-    free(t_str1);
-    free(t_str2);
+    free(p_str1);
+    free(p_str2);
 
     printf("TEST test_random_double_enqueue_double_dequeue(): SUCCESS\n");
 }
@@ -108,22 +110,21 @@ test_random_double_enqueue_double_dequeue()
 void
 test_enqueue_many_elements()
 {
-    const int t_num_elements = 1000000;
-    char* t_elements[t_num_elements];
+    char* t_elements[NUM_ELEMENTS];
 
-    for (int i = 0; i < t_num_elements; i++)
+    for (int i = 0; i < NUM_ELEMENTS; i++)
     {
         t_elements[i] = generate_random_str();
         assert(size() == i);
         assert(enqueue(t_elements[i]) == 0);
     }
-    assert(size() == t_num_elements);
+    assert(size() == NUM_ELEMENTS);
 
     //cleanup
-    for (int i = 0; i < t_num_elements; i++)
+    for (int i = 0; i < NUM_ELEMENTS; i++)
     {
         dequeue();
-        free(t_elements[t_num_elements -1 - i]);
+        free(t_elements[NUM_ELEMENTS -1 - i]);
     }
 
     assert(size() == 0);
@@ -134,19 +135,18 @@ test_enqueue_many_elements()
 void
 test_enqueue_dequeue_many_elements()
 {
-    const int t_num_elements = 1000000;
-    char* t_elements[t_num_elements];
+    char* t_elements[NUM_ELEMENTS];
 
-    for (int i = 0; i < t_num_elements; i++)
+    for (int i = 0; i < NUM_ELEMENTS; i++)
     {
         t_elements[i] = generate_random_str();
         assert(size() == i);
         assert(enqueue(t_elements[i]) == 0);
     }
 
-    assert(size() == t_num_elements);
+    assert(size() == NUM_ELEMENTS);
 
-    for (int i = 0; i < t_num_elements; i++)
+    for (int i = 0; i < NUM_ELEMENTS; i++)
     {
         assert(strcmp(dequeue(), t_elements[i]) == 0);
         free(t_elements[i]);

@@ -2,7 +2,7 @@
 #define QUEUE_H
 
 int
-enqueue(const char* a_data);
+enqueue(const char* p_data);
 
 const char*
 dequeue();

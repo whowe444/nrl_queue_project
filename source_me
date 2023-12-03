@@ -1,6 +1,6 @@
 #! /bin/sh
-
-SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+echo $SCRIPT_DIR
 
 # source top level directory
 export TOP_LEVEL_DIR=${SCRIPT_DIR}

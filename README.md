@@ -69,3 +69,4 @@ Strengths:
 Weaknesses:
 * since using linked lists based implementation, must handle memory management and pointer manipulation and loses out on direct access of an array based implementation
 * int is implementation dependent (C standard only guarantees a minimum length of 16bits) limiting queue length
+* pointers are frequently prone to error, hence I should be using a smart pointer implementation to reduce risk and automate memory management

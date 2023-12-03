@@ -3,15 +3,17 @@
 
 #include <stdlib.h>
 
-static int g_size = 0;
-static node g_sentinel;
-static node* gp_end_of_line = &g_sentinel;
-
 typedef struct node_struct
 {
     const char *p_data;
     struct node_struct* p_next;
 } node;
+
+static int g_size = 0;
+static node g_sentinel;
+static node* gp_end_of_line = &g_sentinel;
+
+static void reset_end_pointer_if_singleton(node* p_node);
 
 int
 enqueue(const char* p_data)
@@ -35,12 +37,7 @@ dequeue()
     node* p_return_node = g_sentinel.p_next;
     if (p_return_node)
     {
-        // handle the special case of size == 1
-        if (p_return_node == gp_end_of_line)
-        {
-            gp_end_of_line = &g_sentinel;
-        }
-
+        reset_end_pointer_if_singleton(p_return_node);
         g_sentinel.p_next = p_return_node->p_next;
         p_return_str = p_return_node->p_data;
         free(p_return_node);
@@ -54,4 +51,13 @@ int
 size()
 {
     return g_size;
+}
+
+static void reset_end_pointer_if_singleton(node* p_node)
+{
+    // handle the special case of size == 1
+    if (p_node == gp_end_of_line)
+    {
+        gp_end_of_line = &g_sentinel;
+    }
 }

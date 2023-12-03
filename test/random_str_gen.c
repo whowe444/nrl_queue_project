@@ -16,10 +16,11 @@ init()
     srand(MAX_NUM + NUM_CHARS);
 }
 
-const char*
+char*
 generate_random_str()
 {
     int t_rand = rand() % MAX_NUM;
-    sprintf(g_str, "%d", t_rand);
-    return g_str;
+    char * t_str = malloc(sizeof(g_str));
+    sprintf(t_str, "%d", t_rand);
+    return t_str;
 }

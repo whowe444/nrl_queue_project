@@ -6,6 +6,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void
 test_empty_size()
@@ -68,7 +69,7 @@ test_double_enqueue_double_dequeue()
 void
 test_random_enqueue_dequeue()
 {
-    const char* t_str = generate_random_str();
+    char* t_str = generate_random_str();
 
     assert(enqueue(t_str) == 0);
     assert(size() == 1);
@@ -76,17 +77,19 @@ test_random_enqueue_dequeue()
     assert(strcmp(dequeue(), t_str) == 0);
     assert(size() == 0);
 
+    free(t_str);
+
     printf("TEST test_random_enqueue_dequeue(): SUCCESS\n");
 }
 
 void
 test_random_double_enqueue_double_dequeue()
 {
-    const char* t_str1 = generate_random_str();
+    char* t_str1 = generate_random_str();
     assert(enqueue(t_str1) == 0);
     assert(size() == 1);
 
-    const char* t_str2 = generate_random_str();
+    char* t_str2 = generate_random_str();
     assert(enqueue(t_str2) == 0);
     assert(size() == 2);
 
@@ -95,6 +98,9 @@ test_random_double_enqueue_double_dequeue()
 
     assert(strcmp(dequeue(), t_str2) == 0);
     assert(size() == 0);
+
+    free(t_str1);
+    free(t_str2);
 
     printf("TEST test_random_double_enqueue_double_dequeue(): SUCCESS\n");
 }

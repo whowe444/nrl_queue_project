@@ -52,9 +52,9 @@ run_nrl_test_bench()
     }
 
     // 6. Add all 10 Test Data elements to the queue
-    for (int i = 0; i < NUM_DATA; i++)
+    for (int t_index = 0; t_index < NUM_DATA; t_index++)
     {
-        enqueue(g_data[i]);
+        enqueue(g_data[t_index]);
     }
 
     // 7. Print the number of elements in the queue

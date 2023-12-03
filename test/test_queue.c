@@ -112,19 +112,19 @@ test_enqueue_many_elements()
 {
     char* t_elements[NUM_ELEMENTS];
 
-    for (int i = 0; i < NUM_ELEMENTS; i++)
+    for (int t_index = 0; t_index < NUM_ELEMENTS; t_index++)
     {
-        t_elements[i] = generate_random_str();
-        assert(size() == i);
-        assert(enqueue(t_elements[i]) == 0);
+        t_elements[t_index] = generate_random_str();
+        assert(size() == t_index);
+        assert(enqueue(t_elements[t_index]) == 0);
     }
     assert(size() == NUM_ELEMENTS);
 
     //cleanup
-    for (int i = 0; i < NUM_ELEMENTS; i++)
+    for (int t_index = 0; t_index < NUM_ELEMENTS; t_index++)
     {
         dequeue();
-        free(t_elements[NUM_ELEMENTS -1 - i]);
+        free(t_elements[NUM_ELEMENTS -1 - t_index]);
     }
 
     assert(size() == 0);
@@ -137,19 +137,19 @@ test_enqueue_dequeue_many_elements()
 {
     char* t_elements[NUM_ELEMENTS];
 
-    for (int i = 0; i < NUM_ELEMENTS; i++)
+    for (int t_index = 0; t_index < NUM_ELEMENTS; t_index++)
     {
-        t_elements[i] = generate_random_str();
-        assert(size() == i);
-        assert(enqueue(t_elements[i]) == 0);
+        t_elements[t_index] = generate_random_str();
+        assert(size() == t_index);
+        assert(enqueue(t_elements[t_index]) == 0);
     }
 
     assert(size() == NUM_ELEMENTS);
 
-    for (int i = 0; i < NUM_ELEMENTS; i++)
+    for (int t_index = 0; t_index < NUM_ELEMENTS; t_index++)
     {
-        assert(strcmp(dequeue(), t_elements[i]) == 0);
-        free(t_elements[i]);
+        assert(strcmp(dequeue(), t_elements[t_index]) == 0);
+        free(t_elements[t_index]);
     }
 
     assert(size() == 0);

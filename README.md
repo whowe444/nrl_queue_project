@@ -25,13 +25,13 @@ make
 
 ## Instructions for running the test benches
 ```
-/* Run tests */
+# Run tests
 ./run_tests.sh
 
-/* Run tests with valgrind */
+# Run tests with valgrind
 ./run_test_with_valgrind.sh
 
-/* Run cppcheck */
+# Run cppcheck
 cppcheck .
 ```
 
@@ -71,3 +71,5 @@ Weaknesses:
 * since using linked lists based implementation, must handle memory management and pointer manipulation and loses out on direct access of an array based implementation
 * int is implementation dependent (C standard only guarantees a minimum length of 16bits) limiting queue length
 * pointers are frequently prone to error, hence I should be using a smart pointer implementation to reduce risk and automate memory management
+* node_generator.h is exposed to the client. this was mostly since I wanted to unit test it in its own module and I use it in both the queue and
+the test code

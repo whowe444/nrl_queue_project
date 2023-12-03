@@ -46,3 +46,9 @@ For the purposes of this project, I define production ready as:
 * Code is checked for memory leaks with valgrind
 * Code is checked with cppcheck
 * Code compiles without warning
+
+## Functionality (API)
+The API for this queue consists of:
+* `int enqueue(const char* a_data); // Adds a new string to the queue.`
+* `const char* dequeue(); // Remove the first in line at the queue.`
+* `int size(); // Returns the current number of elements in the queue.`

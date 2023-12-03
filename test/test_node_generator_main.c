@@ -14,4 +14,10 @@ main()
 
     // TEST generate node then modify
     test_generate_node_then_modify();
+
+    // TEST node with next
+    test_generate_node_with_next();
+
+    //TEST next argument
+    test_generate_node_with_next_arg();
 }

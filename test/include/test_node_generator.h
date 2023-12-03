@@ -15,4 +15,10 @@ test_generate_node_with_str();
 void
 test_generate_node_then_modify();
 
+void
+test_generate_node_with_next();
+
+void
+test_generate_node_with_next_arg();
+
 #endif /* TEST_NODE_GENERATOR_MAIN_H */

@@ -1,7 +1,7 @@
 #ifndef NODE_GENERATOR_H
 #define NODE_GENERATOR_H
 
-#include "node.h"
+typedef struct node_struct node;
 
 node*
 generate_node(const char *p_data, node* p_next);

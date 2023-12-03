@@ -7,6 +7,12 @@ static int g_size = 0;
 static node g_sentinel;
 static node* gp_end_of_line = &g_sentinel;
 
+typedef struct node_struct
+{
+    const char *p_data;
+    struct node_struct* p_next;
+} node;
+
 int
 enqueue(const char* p_data)
 {

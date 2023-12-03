@@ -8,6 +8,12 @@
 #include <string.h>
 #include <stdlib.h>
 
+typedef struct node_struct
+{
+    const char *p_data;
+    struct node_struct* p_next;
+} node;
+
 void
 test_generate_empty_node()
 {

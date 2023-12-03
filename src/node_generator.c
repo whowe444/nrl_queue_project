@@ -3,6 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct node_struct
+{
+    const char *p_data;
+    struct node_struct* p_next;
+} node;
+
 node*
 generate_node(const char *p_data, node* p_next)
 {

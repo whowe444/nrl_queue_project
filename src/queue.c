@@ -27,7 +27,7 @@ dequeue()
 {
     const char* t_return_str = NULL;
     node* t_return_node = g_sentinel.next;
-    if (t_return_node != NULL)
+    if (t_return_node)
     {
         // handle the special case of size == 1
         if (t_return_node == gp_end_of_line)

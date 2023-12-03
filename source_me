@@ -7,6 +7,9 @@ export TOP_LEVEL_DIR=`pwd`
 mkdir -p lib64
 mkdir -p bin
 
+# set library path
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$TOP_LEVEL_DIR/lib64
+
 # obj dirs
 mkdir -p src/obj
 mkdir -p test/obj

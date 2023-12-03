@@ -1,16 +1,11 @@
-#include "test_node_generator_main.h"
+#include "test_node_generator.h"
 
-#include "assert.h"
-#include <stdbool.h>
-#include <stdio.h>
-
-void test_generate_node()
+int
+main()
 {
-    assert(true);
-    printf("TEST test_generate_node(): SUCCESS\n");
-}
+    // TEST empty node
+    test_generate_empty_node();
 
-int main()
-{
-    test_generate_node();
+    // TEST empty str as data
+    test_generate_empty_str_node();
 }

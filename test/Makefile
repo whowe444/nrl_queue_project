@@ -14,10 +14,10 @@ LIBS = -lnrlqueue
 .PHONY: all
 all: $(TARGET_BIN)
 
-_DEPS = test_node_generator_main.h
+_DEPS = test_node_generator.h
 DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
-_OBJ = test_node_generator_main.o
+_OBJ = test_node_generator.o test_node_generator_main.o
 OBJ = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ))
 
 $(OBJ): $(OBJ_DIR)/%.o: %.c $(DEPS)

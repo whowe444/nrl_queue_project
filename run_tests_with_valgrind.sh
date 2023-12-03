@@ -5,7 +5,7 @@ TEST_BINARIES=`ls bin`
 for file in ${TEST_BINARIES[@]}
 do
     echo Running with valgrind: $file
-    echo ===================== 
+    echo =====================
     valgrind ./bin/$file
-    echo  
+    echo
 done

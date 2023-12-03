@@ -15,7 +15,8 @@ init_data()
                 compilation";
     g_data[2] = "assembly and linking. The overall options allow";
     g_data[3] = "the gcc program accepts options and file name";
-    g_data[4] = "Many options have long names starting with -f or with -W---for";
+    g_data[4] = "Many options have long names starting with \
+        -f or with -W---for";
     g_data[5] = "language, you can use that options with all supported langu";
     g_data[6] = "not to run the linker. The";
     g_data[7] = "k";
@@ -68,7 +69,8 @@ run_nrl_test_bench()
     // 10. Print number of elements in the queue
     printf("Size: %d\n", size());
 
-    // 11. Continue removing and printing elements from the queue until none remain
+    // 11. Continue removing and printing
+    // elements from the queue until none remain
     while (size() > 0)
     {
         printf("Removed element: %s\n", dequeue());

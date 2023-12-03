@@ -5,7 +5,7 @@ TEST_BINARIES=`ls bin`
 for file in ${TEST_BINARIES[@]}
 do
     echo Running: $file
-    echo ===================== 
+    echo =====================
     ./bin/$file
-    echo  
+    echo
 done

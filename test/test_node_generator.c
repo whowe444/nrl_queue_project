@@ -23,7 +23,7 @@ test_generate_empty_str_node()
     const char* t_empty_str = "";
     node* t_node = generate_node(t_empty_str);
 
-    assert(strcmp(t_empty_str, t_node->data));
+    assert(strcmp(t_empty_str, t_node->data) == 0);
     assert(t_node->next == NULL);
 
     printf("TEST test_generate_empty_str_node(): SUCCESS\n");

@@ -1,15 +1,17 @@
 #! /bin/sh
 
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
 # source top level directory
-export TOP_LEVEL_DIR=`pwd`
+export TOP_LEVEL_DIR=${SCRIPT_DIR}
 
 # target dirs
-mkdir -p lib64
-mkdir -p bin
+mkdir -p ${TOP_LEVEL_DIR}/lib64
+mkdir -p ${TOP_LEVEL_DIR}/bin
 
 # set library path
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$TOP_LEVEL_DIR/lib64
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TOP_LEVEL_DIR}/lib64
 
 # obj dirs
-mkdir -p src/obj
-mkdir -p test/obj
+mkdir -p ${TOP_LEVEL_DIR}/src/obj
+mkdir -p ${TOP_LEVEL_DIR}/test/obj

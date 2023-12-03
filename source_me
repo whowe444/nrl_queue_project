@@ -1,5 +1,12 @@
 #! /bin/sh
 
+# source top level directory
+export TOP_LEVEL_DIR=`pwd`
+
+# target dirs
 mkdir -p lib64
+mkdir -p bin
+
+# obj dirs
 mkdir -p src/obj
-mkdir -p src/include
+mkdir -p test/obj

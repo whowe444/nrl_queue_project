@@ -1,4 +1,4 @@
-INCLUDE_DIR=include
+INCLUDE_DIR = include
 CC = gcc
 CFLAGS = -I$(INCLUDE_DIR) -fPIC -Wall -Wextra -O2 -g -std=c99
 LDFLAGS = -shared
@@ -21,7 +21,6 @@ $(OBJ): $(OBJ_DIR)/%.o: %.c $(DEPS)
 
 $(TARGET_LIB): $(OBJ)
 	$(CC) ${LDFLAGS} -o $@ $^ $(CFLAGS)
-
 
 .PHONY: clean
 clean:

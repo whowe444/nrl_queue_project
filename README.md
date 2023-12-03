@@ -8,6 +8,7 @@ This project follows the Embedded C Coding Standard found [here](https://barrgro
 * The only library that you can use is the standard C library. **Per the code standard, I use the C99 ISO Version ✅**
 2. Instructions for building the source code shall be provided. **[Here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#instructions-for-building-the-source-code) ✅**
 3. Instructions for running the test benches shall be provided. **[Here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#instructions-for-running-the-test-benches) ✅**
+4. Sufficient documentation shall be provided such that we can implement our own test cases. **[Here]() ✅**
 
 
 ## Instructions for building the source code
@@ -29,4 +30,6 @@ make
 /* Run cppcheck */
 cppcheck .
 ```
+
+## Instructions for adding new test cases
 

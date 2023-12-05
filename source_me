@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 echo "The top level directory of the project is: " $SCRIPT_DIR

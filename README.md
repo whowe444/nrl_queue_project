@@ -69,7 +69,7 @@ Benefits of this API include
 * caller must handle memory management for their data
 
 ## Documentation
-This library provides three public function discusses above in the _Functionality (API) _ section. In order to use the library, include the proper header file (namely queue.h) into your source code file. At that point, you are free to call library functions in your source code. To build the library into your project, be sure to add the library onto your library path (use -L) and link against the library in your Makefile (-lnrlqueue). Examples of this are seen in the `test` directory. Using `-Wl,rpath,<LIBRARY_PATH>` in your Makefile will allow your binary to load the library from the specified library path rather than having to set the `$LD_LIBRARY_PATH` environment variable.
+This library provides three public function discusses above in the _Functionality_ section. In order to use the library, include the proper header file (namely queue.h) into your source code file. At that point, you are free to call library functions in your source code. To build the library into your project, be sure to add the library onto your library path (use -L) and link against the library in your Makefile (-lnrlqueue). Examples of this are seen in the `test` directory. Using `-Wl,rpath,<LIBRARY_PATH>` in your Makefile will allow your binary to load the library from the specified library path rather than having to set the `$LD_LIBRARY_PATH` environment variable.
 
 ## Strengths and Weaknesses of my Implementation
 Strengths:

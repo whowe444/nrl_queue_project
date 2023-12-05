@@ -1,11 +1,9 @@
 #!/bin/bash
 
-TEST_BINARIES=`ls bin`
-
-for file in ${TEST_BINARIES[@]}
+for file in bin/*;
 do
-    echo Running with valgrind: $file
+    echo Running: "$file"
     echo =====================
-    valgrind ./bin/$file
+    valgrind ./"$file"
     echo
 done

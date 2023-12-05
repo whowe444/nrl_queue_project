@@ -16,7 +16,6 @@ This project follows the Embedded C Coding Standard found [here](https://barrgro
 
 ## Instructions for building the source code
 ```
-git clone https://github.com/whowe444/nrl_queue_project.git
 cd nrl_queue_project
 source source_me
 make

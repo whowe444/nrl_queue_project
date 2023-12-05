@@ -30,7 +30,7 @@ make
 # Run tests with valgrind
 ./run_test_with_valgrind.sh
 
-# Run cppcheck
+# Run cppcheck (if installed)
 cppcheck .
 ```
 

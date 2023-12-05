@@ -21,6 +21,17 @@ bash
 source source_me
 make
 ```
+This sequence of commands will run make on both the `src` and `test` directories, thereby building libnrlqueue.so and the test binaries (nrl_test_main, test_node_generator_main, test_queue_main) respectively. `make clean` can be run within `src` and `test` but not from the top level. Each directory can be built individually like so:
+```
+cd nrl_queue_project
+bash
+source source_me
+cd src
+make clean && make
+cd ../test
+make clean && make
+```
+This builds everything from scratch.
 
 ## Instructions for running the test benches
 ```

@@ -44,11 +44,12 @@ run_nrl_test_bench()
     const char* p_removed_element = dequeue();
     if (p_removed_element)
     {
+        printf("Remove SUCCESS.\n");
         printf("Removed element: %s\n", p_removed_element);
     }
     else
     {
-        printf("Attempted to remove element, but no element found.\n");
+        printf("Remove FAILED. Attempted to remove element, but no element found.\n");
     }
 
     // 6. Add all 10 Test Data elements to the queue

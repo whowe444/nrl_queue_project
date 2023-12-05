@@ -3,6 +3,7 @@ INCLUDE_DIRS = -I$(INCLUDE_DIR) -I../src/include/
 CC = gcc
 CFLAGS = $(INCLUDE_DIRS) -fPIC -Wall -Wextra -O2 -g -std=c99
 LIBRARY_PATH = ${TOP_LEVEL_DIR}/lib64/
+LDFLAGS = -Wl,-rpath,${LIBRARY_PATH}
 
 OBJ_DIR = ./obj
 LIB_DIR = ../lib64
@@ -26,7 +27,7 @@ $(OBJ1): $(OBJ_DIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(TARGET_BIN1): $(OBJ1)
-	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
+	$(CC) ${LDFLAGS} -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
 
 _OBJ2 = test_queue.o test_queue_main.o random_str_gen.o
 OBJ2 = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ2))
@@ -35,7 +36,7 @@ $(OBJ2): $(OBJ_DIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(TARGET_BIN2): $(OBJ2)
-	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
+	$(CC) ${LDFLAGS} -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
 
 _OBJ3 = nrl_test_bench.o nrl_test_main.o
 OBJ3 = $(patsubst %,$(OBJ_DIR)/%,$(_OBJ3))
@@ -44,7 +45,7 @@ $(OBJ3): $(OBJ_DIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(TARGET_BIN3): $(OBJ3)
-	$(CC) -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
+	$(CC) ${LDFLAGS} -o $@ $^ $(CFLAGS) -L$(LIBRARY_PATH) $(LIBS)
 
 .PHONY: clean
 clean:

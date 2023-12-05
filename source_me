@@ -10,9 +10,6 @@ export TOP_LEVEL_DIR=${SCRIPT_DIR}
 mkdir -p ${TOP_LEVEL_DIR}/lib64
 mkdir -p ${TOP_LEVEL_DIR}/bin
 
-# set library path, so we can run our test binaries
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TOP_LEVEL_DIR}/lib64
-
 # obj dirs
 mkdir -p ${TOP_LEVEL_DIR}/src/obj
 mkdir -p ${TOP_LEVEL_DIR}/test/obj

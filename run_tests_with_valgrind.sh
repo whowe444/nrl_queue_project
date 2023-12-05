@@ -4,6 +4,6 @@ for file in bin/*;
 do
     echo Running: "$file"
     echo =====================
-    valgrind ./"$file"
+    valgrind --max-stackframe=8000008 ./"$file"
     echo
 done

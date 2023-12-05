@@ -5,14 +5,13 @@ This project follows the Embedded C Coding Standard found [here](https://barrgro
 
 ## Additional Requirements
 1. All source code and files necessary to build shall be provided in a single zip file.
-* The only library that you can use is the standard C library. **Per the code standard, I use the C99 ISO Version ✅**
-2. Instructions for building the source code shall be provided. **[Here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#instructions-for-building-the-source-code) ✅**
-3. Instructions for running the test benches shall be provided. **[Here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#instructions-for-running-the-test-benches) ✅**
-4. Sufficient documentation shall be provided such that we can implement our own test cases. **[Here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#instructions-for-adding-new-test-cases) ✅**
-5. The gcc compiler is used for this project ✅
-6. The proper code standard is used. See **[here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#Code-Standard).**
-7. Please deliver code as an attachment to an email ✅
-8. The code delivered shall be production ready. Defined [here](https://github.com/whowe444/nrl_queue_project/blob/main/README.md#Production-Ready).
+2. Instructions for building the source code shall be provided.
+3. Instructions for running the test benches shall be provided.
+4. Sufficient documentation shall be provided such that we can implement our own test cases.
+5. The gcc compiler is used for this project
+6. The proper code standard is used.
+7. Please deliver code as an attachment to an email
+8. The code delivered shall be production ready.
 
 
 ## Instructions for building the source code
